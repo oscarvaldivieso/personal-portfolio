@@ -44,76 +44,43 @@ export default function Hero() {
   return (
     <div
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-background/95"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
-      {/* Animated background elements */}
+      {/* Animated background elements - subtle and modern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Gradient orbs */}
-        <div className="floating-element-1 parallax-element absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="floating-element-2 parallax-slow absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="floating-element-3 parallax-element absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[32rem] h-[32rem] bg-cyan-500/5 rounded-full blur-3xl" />
+        {/* Soft gradient orbs for depth */}
+        <div className="floating-element-1 parallax-element absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400/8 rounded-full blur-3xl" />
+        <div className="floating-element-2 parallax-slow absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-purple-400/6 rounded-full blur-3xl" />
+        <div className="floating-element-3 parallax-element absolute top-1/3 right-1/3 w-80 h-80 bg-cyan-400/5 rounded-full blur-3xl" />
 
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:64px_64px]" />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,black_20%,transparent_80%)]" />
       </div>
 
-      {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-        {/* Eyebrow text */}
-        <div className="hero-subtitle mb-6">
-          <span className="inline-block px-4 py-2 rounded-full bg-foreground/5 border border-foreground/10 text-sm font-medium">
-            Welcome to my portfolio
+      {/* Main content - centered name */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        {/* Main heading - Large and centered */}
+        <h1 className="hero-title">
+          <span className="block text-[clamp(3rem,12vw,10rem)] font-black tracking-tighter leading-[0.9] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-600 bg-clip-text text-transparent">
+            Oscar
           </span>
-        </div>
-
-        {/* Main heading */}
-        <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-          <span className="block bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 bg-clip-text text-transparent">
-            Hola, soy Oscar Valdivieso
+          <span className="block text-[clamp(3rem,12vw,10rem)] font-black tracking-tighter leading-[0.9] mt-2 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+            Valdivieso
           </span>
         </h1>
 
-        {/* Subheading */}
-        <p className="hero-description text-xl sm:text-2xl md:text-3xl text-foreground/70 font-light mb-8 max-w-3xl mx-auto">
-          Creative Developer & Designer crafting exceptional digital experiences
-        </p>
-
-        {/* Description */}
-        <p className="hero-description text-base sm:text-lg text-foreground/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-          I build beautiful, performant web applications with modern technologies.
-          Passionate about clean code, user experience, and bringing ideas to life.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="group relative px-8 py-4 bg-foreground text-background rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl">
-            <span className="relative z-10">View My Work</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
-
-          <button className="px-8 py-4 bg-transparent border-2 border-foreground/20 text-foreground rounded-full font-semibold text-lg hover:border-foreground/40 hover:bg-foreground/5 transition-all hover:scale-105">
-            Get In Touch
-          </button>
-        </div>
-
-        {/* Social links or tech stack indicators */}
-        <div className="hero-cta mt-16 flex gap-6 justify-center items-center text-foreground/40">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span className="text-sm">Available for work</span>
-          </div>
-        </div>
+        {/* Minimal decorative line */}
+        <div className="hero-description mt-12 mx-auto w-24 h-0.5 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - minimal */}
       <button
         onClick={scrollToContent}
-        className="hero-scroll-indicator absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40 hover:text-foreground/60 transition-colors cursor-pointer"
+        className="hero-scroll-indicator absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer group"
         aria-label="Scroll to content"
       >
-        <span className="text-sm font-medium">Scroll</span>
-        <div className="w-6 h-10 rounded-full border-2 border-current flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 bg-current rounded-full" />
+        <div className="w-6 h-10 rounded-full border-2 border-gray-300 group-hover:border-gray-400 flex items-start justify-center p-2 transition-colors">
+          <div className="w-1.5 h-1.5 bg-gray-400 group-hover:bg-gray-600 rounded-full animate-bounce" />
         </div>
       </button>
     </div>
